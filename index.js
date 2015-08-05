@@ -9,10 +9,10 @@ var leaflet = function(args, content) {
   return Promise.try(function() {
     return yaml.safeLoad(content);
   }).bind({
-    asset_dir: this.asset_dir,
+    static_dir: hexo.source_dir + (hexo.config.static_dir || 'static'),
   }).then(function(options) {
     this.options = options;
-    return fs.readFile(this.asset_dir + this.options.file);
+    return fs.readFile(this.static_dir + '/' + this.options.file);
   }).then(function(script) {
     this.name = crypto.createHash('sha1')
       .update(content)
@@ -23,8 +23,7 @@ var leaflet = function(args, content) {
     return fs.exists(this.out);
   }).then(function(exists) {
     if(exists) return;
-    var static_dir = hexo.config.static_dir || 'static';
-    this.options.static_dir = hexo.source_dir + static_dir;
+    this.options.static_dir = this.static_dir;
     return ln(this.out, this.options);
   }).then(function() {
     return hexo.render.render({ path: __dirname + '/img.ejs' }, {
