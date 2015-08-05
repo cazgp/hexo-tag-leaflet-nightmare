@@ -1,0 +1,18 @@
+{
+  "name": "hexo-tag-leaflet-nightmare",
+  "version": "0.0.1",
+  "description": "Hexo plugin for leaflet-nightmare",
+  "main": "index.js",
+  "author": "Caroline Glassberg-Powell",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cazgp/hexo-tag-leaflet-nightmare.git"
+  },
+  "dependencies": {
+    "bluebird": "^2.9.34",
+    "hexo-fs": "^0.1.3",
+    "js-yaml": "^3.3.1",
+    "leaflet-nightmare": "0.0.3"
+  }
+}
