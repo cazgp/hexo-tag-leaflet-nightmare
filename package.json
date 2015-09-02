@@ -1,6 +1,6 @@
 {
   "name": "hexo-tag-leaflet-nightmare",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Hexo plugin for leaflet-nightmare",
   "main": "index.js",
   "author": "Caroline Glassberg-Powell",

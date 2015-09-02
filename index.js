@@ -10,6 +10,7 @@ var leaflet = function(args, content) {
     return yaml.safeLoad(content);
   }).bind({
     static_dir: hexo.source_dir + (hexo.config.static_dir || 'static'),
+    asset_dir: this.asset_dir
   }).then(function(options) {
     this.options = options;
     return fs.readFile(this.static_dir + '/' + this.options.file);
